@@ -1,1 +1,5 @@
 theme: jekyll-theme-hacker
+name: Veggie Vertical Farm Cybernetics Project (V2FCP)
+gems:
+  - jekyll-feed
+  - jekyll-paginate
