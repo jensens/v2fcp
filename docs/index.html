@@ -9,12 +9,14 @@ tailored towards the specific requirements.</p>
 
 <hr />
 
+<h2>Blog</h2>
+
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
 
       <strong>{{ post.date | date: '%Y-%m-%d' }}</strong>
-      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
 
       <div class="entry">
         {{ post.excerpt }}
