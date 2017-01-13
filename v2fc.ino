@@ -26,15 +26,24 @@
 static int HUMIDITY_BOUNDARY = 500;
 static int PUMP_TIME = 5000;
 
+static int VALVES[3] = {9, 10, 11};
+static int SENSORS[3] = {6, 7, 8};
+
 int pumpPin = 12;      // select the pin for the pump
 
 int sensorPin = A0;    // select the input pin for the humidity
 int sensorValue = 0;   // variable to store the value coming from the sensor
 
 void setup() {
-  pinMode(pumpPin, OUTPUT);
   Serial.begin(9600);
+  for (ixd=0; idx<=3; count++) {
+    pinMode(VALES[idx], OUTPUT);
+  }
+  pinMode(pumpPin, OUTPUT);
+}
 
+void switchMultiplexer(int *multiplexer, int port) {
+  
 }
 
 void pump(int column) {
@@ -50,11 +59,22 @@ int readSensor(int column) {
 }
 
 void loop() {
-  // read the value from the sensor:
-  // turn the ledPin on
-  if (readSensor(0) > HUMIDITY_BOUNDARY) {
-    pump(0);
-    delay(2000);
-  }
+  // loop over all sensors with idx:
+    // check if enough water, if not:
+        // go into waiting for water loop with buzzer alarm
+    // check sensor of idx:
+        // power on sensor
+        // wait some ms
+        // read sensor
+    // check if a value at all comes in (like >10) (connected!)
+    // AND check if value is < HUMIDITY_BOUNDARY:
+        // pump!
+  // wait for 10 minutes
+
+  // TODO
+  // if (readSensor(0) > HUMIDITY_BOUNDARY) {
+  //   pump(0);
+  //   delay(2000);
+  // }
   delay(200);
 }
