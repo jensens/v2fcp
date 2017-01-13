@@ -8,14 +8,14 @@ layout: default
   {% for post in site.posts %}
     <article class="post">
 
+      <strong>{{ post.date | date: '%Y-%m-%d' }}</strong>
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-      <h2>{{ post.date }}</h2>
 
       <div class="entry">
         {{ post.excerpt }}
       </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">read article</a>
     </article>
   {% endfor %}
 </div>
